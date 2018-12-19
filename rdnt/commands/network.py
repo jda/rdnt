@@ -9,10 +9,12 @@ from typing import Dict, List
 
 from merakihelper import MerakiHelper
 
+
 @click.group()
 @click.pass_context
 def network(ctx):
     pass
+
 
 @network.command()
 @click.argument("clone_net_name")
@@ -73,7 +75,7 @@ def gen_device_report(ctx, net_name_prefix):
         net_name = net.get("name", "")
 
         if net_name.startswith(net_name_prefix):
-            net_id = net['id']
+            net_id = net["id"]
             matched_networks[net_id] = net
             matched_network_ids.append(net_id)
 
@@ -82,22 +84,29 @@ def gen_device_report(ctx, net_name_prefix):
     for device in mh.get_devices():
         net_id = device.get("networkId")
         if net_id in matched_network_ids:
-            device['network_name'] = matched_networks[net_id].get("name")
+            device["network_name"] = matched_networks[net_id].get("name")
             our_devices.append(device)
-    
-    our_devices = sorted(our_devices, key=lambda x: x['network_name'])
+
+    our_devices = sorted(our_devices, key=lambda x: x["network_name"])
 
     # show it!
-    fieldnames = OrderedDict([
-        ('serial',None),
-        ('mac',None),
-        ('model',None),
-        ('network_name',None),
-        ('name',None),
-    ])
+    fieldnames = OrderedDict(
+        [
+            ("serial", None),
+            ("mac", None),
+            ("model", None),
+            ("network_name", None),
+            ("name", None),
+        ]
+    )
     csv_out = csv.DictWriter(
-        sys.stdout, delimiter=',', quotechar='"', fieldnames=fieldnames, 
-        extrasaction='ignore', quoting=csv.QUOTE_ALL, lineterminator='\n',
+        sys.stdout,
+        delimiter=",",
+        quotechar='"',
+        fieldnames=fieldnames,
+        extrasaction="ignore",
+        quoting=csv.QUOTE_ALL,
+        lineterminator="\n",
     )
     csv_out.writeheader()
     for device in our_devices:

@@ -88,7 +88,7 @@ class MerakiHelper:
         """
         wrap get org inventory in lru cache
         """
-        
+
         org_id = self.get_my_org_id()
         devices = meraki.getorginventory(self.apikey, org_id, suppressprint=True)
         return devices
