@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.pythonPath": ".venv\\Scripts\\python.exe",
+		"python.linting.pylintArgs": [
+			"--init-hook",
+			"import sys; sys.path.append('rdnt')"
+		]
+	}
+}
