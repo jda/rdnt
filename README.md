@@ -8,7 +8,7 @@ Rapid Deployment Networks Tool
 python3 -m venv .venv
 source .venv/bin/activate
 pip3 install -r requirements.txt
-python rdnt network gen-device-report Jade
+python3 rdnt network gen-device-report Jade
 "serial","mac","model","network_name","name"
 "QXXD-CXXZ-7XX8","00:18:0a:xx:xx:xx","MR18","Jade Home Lab",""
 
@@ -35,4 +35,11 @@ If you are using PowerShell on Windows, set env var like this:
 ```PowerShell
 $env:MERAKI_DASHBOARD_KEY = "secret_key_here"
 $env:MERAKI_DASHBOARD_ORG = "MyOrg"
+```
+
+On Linux:
+
+```bash
+ export MERAKI_DASHBOARD_KEY=api_key_goes_here
+ export MERAKI_DASHBOARD_ORG=Jade
 ```
