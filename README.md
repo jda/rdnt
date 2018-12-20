@@ -1,6 +1,4 @@
-# rdnt
-
-Rapid Deployment Networks Tool
+# Rapid Deployment Networks Tool (rdnt)
 
 ## Install
 
