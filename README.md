@@ -1,5 +1,7 @@
 # Rapid Deployment Networks Tool (rdnt)
 
+Helper utils for managing Meraki networks
+
 ## Install
 
 ```bash
