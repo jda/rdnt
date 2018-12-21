@@ -25,9 +25,9 @@ def find(ctx, serials):
 
     mh = MerakiHelper(apikey, org)
     for serial in serials:
-        device = mh.search_networks_for_device(serial)
-        if device:
-            print(device)
+        dev = mh.search_networks_for_device(serial)
+        if dev:
+            print(dev)
 
 
 @device.command()
