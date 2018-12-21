@@ -1,4 +1,4 @@
-# Rapid Deployment Networks Tool (rdnt)
+# Rapid Deployment Network Tool (rdnt)
 
 Helper utils for managing Meraki networks
 
