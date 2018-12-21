@@ -70,7 +70,12 @@ class MerakiHelper:
             self.apikey, org_id, new_net_name, kind, "", timezone, cloneid=curr_net_id
         )
 
-        net_id = res.get("id", None)
+        try:
+            net_id = res.get("id", None)
+        except AttributeError:
+            # because error returns a list...
+            raise NetworkNotFound(res[0])
+
         if not net_id:
             raise NetworkNotFound()
         for dev in devs:
