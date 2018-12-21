@@ -2,6 +2,31 @@
 
 Helper utils for managing Meraki networks
 
+## What can it do?
+
+### Clone network and assign devices
+
+Given a template network, clone it into a new network and assign gear so you are ready to deploy.
+
+Run `rdnt network clone "Jade Home Lab" "Jade New Lab" QXXN-QXXL-WXX4` to create new network `Jade New Lab` with one device assigned. You can provide multiple devices so you can build the network with a single command.
+
+### Unassign device from a network
+
+Devices may not be unassigned from networks following 
+previous deployments, so it's helpful to be able to quickly 
+ensure that they are unassigned and ready to be added to a new network.
+
+Run `rdnt device unassign QXXD-CXXZ-7XX8` to unassign device from any network in your org. 
+Multiple serial numbers are permitted.
+
+### Show inventory for devices in network
+
+`rdnt network gen-device-report` to show all devices
+
+`rdnt network gen-device-report Net` to show devices 
+in network with name starting with "Net"
+
+
 ## Install
 
 ```bash
