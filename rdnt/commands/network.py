@@ -56,7 +56,7 @@ def conform_device_names(ctx, net_name):
 
 
 @network.command()
-@click.argument("net_name_prefix")
+@click.argument("net_name_prefix", required=False)
 @click.pass_context
 def gen_device_report(ctx, net_name_prefix):
     """
@@ -65,6 +65,9 @@ def gen_device_report(ctx, net_name_prefix):
 
     apikey = ctx.obj["API_KEY"]
     org = ctx.obj["ORG"]
+
+    if not net_name_prefix:
+        net_name_prefix = ""
 
     mh = MerakiHelper(apikey, org)
 
