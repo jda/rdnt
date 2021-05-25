@@ -1,6 +1,8 @@
 # Rapid Deployment Network Tool (rdnt)
 
-Helper utils for managing Meraki networks
+Helper utils for managing Meraki networks. 
+
+Impetus: The initial version of `rdnt` was written in a couple hours of slack time while deploying WiFi hotspots in a favela because clicking around in Meraki dash was too iffy on my LTE connection. It served that purpose.
 
 ## What can it do?
 
